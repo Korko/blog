@@ -2539,6 +2539,10 @@
 						display: none;
 					}
 
+					.box.post .info .date .month span.delim {
+						display: inline;
+					}
+
 					.box.post .info .date .day {
 						display: block;
 						margin: 0.25em 0 0 0;
@@ -2632,6 +2636,10 @@
 
 				.box.post .info .date {
 					display: inline;
+				}
+
+				.box.post .info .date .month span.delim {
+					display: none;
 				}
 
 				.box.post .info .stats {
@@ -2782,6 +2790,10 @@
 						.box.post .info .date .year, .box.post .info .date .month span, .box.post .info .date .year.force span {
 							display: none;
 						}
+
+					.box.post .info .date .month span.delim {
+						display: inline;
+					}
 
 					.box.post .info .date .year.force {
 						display: inline;
