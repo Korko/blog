@@ -1,0 +1,33 @@
+---
+layout: default
+title: Blog
+---
+	{% for post in site.posts %}
+		<article class="box post post-excerpt">
+			<header>
+				<!--
+					Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+					if they get too long. You can also remove the <p> entirely if you don't
+					need a subtitle.
+				-->
+				<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+				{% if post.description %}<p>{{ post.description }}</p>{% endif %}
+			</header>
+			<div class="info">
+				<!--
+					Note: The date should be formatted exactly as it's shown below. In particular, the
+					"least significant" characters of the month should be encapsulated in a <span>
+					element to denote what gets dropped in 1200px mode (eg. the "uary" in "January").
+					Oh, and if you don't need a date for a particular page or post you can simply delete
+					the entire "date" element.
+
+				-->
+				{% capture short_month %}{{ post.date | date: "%b" }}{% endcapture %}
+				<span class="date"><span class="month">{{ short_month }}<span>{{ post.date | date: "%B" | replace: short_month, '' }}</span></span> <span class="day">{{ post.date | date: "%d" }}</span><span class="year">, {{ post.date | date: "%Y" }}</span></span>
+			</div>
+			{% if post.excerpt %}
+				{% if post.image %}<a href="#" class="image featured"><img src="{{ post.image }}" alt="" /></a>{% endif %}
+				<p>{{ post.excerpt }}</p>
+			{% endif %}
+		</article>
+	{% endfor %}
