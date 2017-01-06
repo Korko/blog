@@ -22,8 +22,33 @@ title: Blog
 			the entire "date" element.
 
 		-->
-		{% capture short_month %}{{ page.date | date: "%b" }}{% endcapture %}
-		<span class="date"><span class="month">{{ short_month }}<span>{{ page.date | date: "%B" | replace: short_month, '' }}</span></span> <span class="day">{{ page.date | date: "%d" }}</span><span class="year force"><span>, </span>{{ page.date | date: "%Y" }}</span></span>
+		<span class="date"><span class="month">{% case m %}
+  {% when '1' %}Janv<span class="delim">.</span>
+  {% when '2' %}Févr<span class="delim">.</span>
+  {% when '3' %}Mars
+  {% when '4' %}Avr<span class="delim">.</span>
+  {% when '5' %}Mai
+  {% when '6' %}Juin
+  {% when '7' %}Juill<span class="delim">.</span>
+  {% when '8' %}Août
+  {% when '9' %}Sept<span class="delim">.</span>
+  {% when '10' %}Oct<span class="delim">.</span>
+  {% when '11' %}Nov<span class="delim">.</span>
+  {% when '12' %}Déc<span class="delim">.</span>
+{% endcase %}<span>{% case m %}
+  {% when '1' %}ier
+  {% when '2' %}ier
+  {% when '3' %}
+  {% when '4' %}il
+  {% when '5' %}
+  {% when '6' %}
+  {% when '7' %}et
+  {% when '8' %}
+  {% when '9' %}embre
+  {% when '10' %}obre
+  {% when '11' %}embre
+  {% when '12' %}embre
+{% endcase %}</span></span> <span class="day">{{ page.date | date: "%d" }}</span><span class="year force"><span>, </span>{{ page.date | date: "%Y" }}</span></span>
 	</div>
 	{% if page.image %}<a href="#" class="image featured"><img src="{{ page.image }}" alt="" /></a>{% endif %}
 	<p>{{ content }}</p>
