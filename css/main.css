@@ -2779,9 +2779,14 @@
 						display: inline;
 					}
 
-						.box.post .info .date .year, .box.post .info .date .month span {
+						.box.post .info .date .year, .box.post .info .date .month span, .box.post .info .date .year.force span {
 							display: none;
 						}
+
+					.box.post .info .date .year.force {
+						display: block;
+						margin: 0.25em 0 0 0;
+					}
 
 					.box.post .info .stats {
 						display: inline;
