@@ -23,7 +23,7 @@ title: Blog
 
 		-->
 		{% capture short_month %}{{ page.date | date: "%b" }}{% endcapture %}
-		<span class="date"><span class="month">{{ short_month }}<span>{{ page.date | date: "%B" | replace: short_month, '' }}</span></span> <span class="day">{{ page.date | date: "%d" }}</span><span class="year">, {{ page.date | date: "%Y" }}</span></span>
+		<span class="date"><span class="month">{{ short_month }}<span>{{ page.date | date: "%B" | replace: short_month, '' }}</span></span> <span class="day">{{ page.date | date: "%d" }}</span><span class="year force"><span>, </span>{{ page.date | date: "%Y" }}</span></span>
 	</div>
 	{% if page.image %}<a href="#" class="image featured"><img src="{{ page.image }}" alt="" /></a>{% endif %}
 	<p>{{ content }}</p>
