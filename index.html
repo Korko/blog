@@ -26,33 +26,9 @@ title: Blog
 			{% assign year = post.date | date: "%Y" %}
 			{% assign current_year = site.time | date: '%Y' %}
 			{% assign m = post.date | date: "%-m" %}
-			<span class="date"><span class="month">{% case m %}
-  {% when '1' %}Janv<span class="delim">.</span>
-  {% when '2' %}Févr<span class="delim">.</span>
-  {% when '3' %}Mars
-  {% when '4' %}Avr<span class="delim">.</span>
-  {% when '5' %}Mai
-  {% when '6' %}Juin
-  {% when '7' %}Juill<span class="delim">.</span>
-  {% when '8' %}Août
-  {% when '9' %}Sept<span class="delim">.</span>
-  {% when '10' %}Oct<span class="delim">.</span>
-  {% when '11' %}Nov<span class="delim">.</span>
-  {% when '12' %}Déc<span class="delim">.</span>
-{% endcase %}<span>{% case m %}
-  {% when '1' %}ier
-  {% when '2' %}ier
-  {% when '3' %}
-  {% when '4' %}il
-  {% when '5' %}
-  {% when '6' %}
-  {% when '7' %}et
-  {% when '8' %}
-  {% when '9' %}embre
-  {% when '10' %}obre
-  {% when '11' %}embre
-  {% when '12' %}embre
-{% endcase %}</span></span> <span class="day">{{ post.date | date: "%d" }}</span> <span class="year {% if year != current_year %}force{% endif %}">{{ post.date | date: "%Y" }}</span></span>
+			{% capture short_month %}{% case m %}{% when '1' %}Janv<span class="delim">.</span>{% when '2' %}Févr<span class="delim">.</span>{% when '3' %}Mars{% when '4' %}Avr<span class="delim">.</span>{% when '5' %}Mai{% when '6' %}Juin{% when '7' %}Juill<span class="delim">.</span>{% when '8' %}Août{% when '9' %}Sept<span class="delim">.</span>{% when '10' %}Oct<span class="delim">.</span>{% when '11' %}Nov<span class="delim">.</span>{% when '12' %}Déc<span class="delim">.</span>{% endcase %}{% endcapture %}
+			{% capture end_month %}{% case m %}{% when '1' %}ier{% when '2' %}ier{% when '3' %}{% when '4' %}il{% when '5' %}{% when '6' %}{% when '7' %}et{% when '8' %}{% when '9' %}embre{% when '10' %}obre{% when '11' %}embre{% when '12' %}embre{% endcase %}{% endcapture %}
+			<span class="date"><span class="month">{{ short_month }}<span>{{ end_month }}</span></span> <span class="day">{{ post.date | date: "%d" }}</span> <span class="year {% if year != current_year %}force{% endif %}">{{ post.date | date: "%Y" }}</span></span>
 		</div>
 		{% if post.image %}<img src="{{ post.image }}" alt="" />{% endif %}
 		<p>{{ post.excerpt }}</p>
