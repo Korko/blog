@@ -2,3 +2,5 @@ name: Korko, sur les traces d'une développeur
 markdown: kramdown
 paginate: 5
 paginate_path: "/page:num/"
+gems:
+  - jekyll-sitemap
