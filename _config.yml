@@ -1,5 +1,4 @@
 name: Korko, sur les traces d'une développeur
 markdown: kramdown
-excerpt_separator: <!--more-->
 paginate: 5
 paginate_path: "/page:num/"
