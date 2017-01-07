@@ -4,3 +4,4 @@ paginate: 5
 paginate_path: "/page:num/"
 gems:
   - jekyll-sitemap
+excerpt_separator: ''
