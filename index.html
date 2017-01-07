@@ -31,7 +31,7 @@ title: Blog
 			<span class="date"><span class="day">{{ post.date | date: "%d" }}</span> <span class="month">{{ short_month }}<span>{{ end_month }}</span></span> <span class="year {% if year != current_year %}force{% endif %}">{{ post.date | date: "%Y" }}</span></span>
 		</div>
 		{% if post.image %}<img src="{{ post.image }}" alt="" />{% endif %}
-		<p>{{ post.excerpt }}</p>
+		<p>{{ post.content }}</p>
 	</article>
 {% endfor %}
 
